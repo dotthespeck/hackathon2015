@@ -2,13 +2,19 @@
 <%= button_to 'Sign up: Organization', new_organization_path, :method => :get %>
 </div>
 
+<div>
 <% @flyers.each do |flyer| %>
 
 <ul>
-  <li><%= flyer.organization_id %></li>
-  <li><a href="/flyers/<%=flyer.id%>"><%= flyer.image %></li>
+  <li><%= flyer.name %></li>
+  <li><a href="/flyers/<%=flyer.id%>"><img src="<%=flyer.image%>" /></li>
   <li><%= flyer.contact %></li>
   <li><%= flyer.contact_email %></li>
   <li><%= flyer.category %></li>
 </ul>
 <% end %>
+</div>
+
+<div>
+<%= button_to 'Add a flyer', new_flyer_path, :method => :get %>
+</div>

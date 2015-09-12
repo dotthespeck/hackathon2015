@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150912170119) do
+ActiveRecord::Schema.define(version: 20150912183011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "flyers", force: true do |t|
-    t.string   "organization_id", null: false
-    t.string   "image",           null: false
+    t.string   "organization_id", default: "0", null: false
+    t.string   "image",                         null: false
     t.string   "address"
-    t.string   "contact",         null: false
+    t.string   "contact",                       null: false
     t.string   "contact_email"
     t.string   "category"
     t.string   "date"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20150912170119) do
     t.text     "information"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "organizations", force: true do |t|

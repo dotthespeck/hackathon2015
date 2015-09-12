@@ -6,11 +6,10 @@ FactoryGirl.define do
     contact 'Very C. Person'
     contact_email 'verycharitableperson@gmail.com'
     category 'Family'
-    #flyer 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRR2fVLdEWusMJJaz-B_iatfdRFxQdpYl5xhVSxkFTTRmMWCQgdntOoG8jW'
   end
 
   factory :flyer do
-    organization_id 1
+    name 'Awesome upcoming event'
     image 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRR2fVLdEWusMJJaz-B_iatfdRFxQdpYl5xhVSxkFTTRmMWCQgdntOoG8jW'
     address '387 Congress Street, Portland, ME 04101'
     contact 'Very C. Person'
@@ -21,6 +20,7 @@ FactoryGirl.define do
     tags '#event #great'
     information "This event will be great and a wonderful event. It'll be great"
 
+    organization
   end
 
   # factory :review do

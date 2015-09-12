@@ -22,7 +22,7 @@ feature "User sees all flyers" do
 
     visit root_path
 
-    expect(page).to have_content "#{flyer.organization_id}"
+    expect(page).to have_content "#{flyer.name}"
     expect(page).to have_content "#{flyer.image}"
     expect(page).to have_content "#{flyer.contact}"
     expect(page).to have_content "#{flyer.contact_email}"

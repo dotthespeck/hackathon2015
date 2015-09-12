@@ -18,7 +18,7 @@ scenario 'User clicks on flyer' do
     visit root_path
     click_on flyer.image
 
-    expect(page).to have_content flyer.organization_id
+    expect(page).to have_content flyer.name
     expect(page).to have_content flyer.image
     expect(page).to have_content flyer.address
     expect(page).to have_content flyer.contact

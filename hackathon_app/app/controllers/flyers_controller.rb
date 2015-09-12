@@ -13,9 +13,18 @@ class FlyersController < ActionController::Base
   end
 
   def new
-    @book = Book.new
+    @flyer = Flyer.new
   end
 
+  def create
+    @flyer = Flyer.new(flyer_params)
+    #@flyer.organization_id = organization.id
+    if @flyer.save
+      redirect_to root_path, :notice => "Your flyer is saved!"
+    else
+      render :new
+    end
+  end
   # def create
   #   @flyer = flyer.new(flyer_params)
   #   @book.user_id = current_user.id
@@ -25,5 +34,10 @@ class FlyersController < ActionController::Base
   #     render :new
   #   end
   # end
+
+  private
+    def flyer_params
+      params.require(:flyer).permit(:name, :image, :address, :contact, :contact_email, :category, :date, :time, :tags, :information)
+    end
 
 end
