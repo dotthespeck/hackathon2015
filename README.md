@@ -1,0 +1,2 @@
+# hackathon2015
+Welcome to AllABoard! An app that serves as a message board for local organizations. Built during the Portland Public Library's Civic Hackathon, September 2015.
