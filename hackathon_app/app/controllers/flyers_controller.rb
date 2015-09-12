@@ -11,4 +11,19 @@ class FlyersController < ActionController::Base
     id = params[:id]
     @flyer = Flyer.find(id)
   end
+
+  def new
+    @book = Book.new
+  end
+
+  # def create
+  #   @flyer = flyer.new(flyer_params)
+  #   @book.user_id = current_user.id
+  #   if @book.save
+  #     redirect_to root_path, :notice => "Flyer was successfully added"
+  #   else
+  #     render :new
+  #   end
+  # end
+
 end

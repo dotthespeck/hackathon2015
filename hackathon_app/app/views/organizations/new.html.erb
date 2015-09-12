@@ -1,0 +1,31 @@
+<%= form_for(@organization) do |f| %>
+
+<div class="field">
+  <%= f.label :name, "Name" %><br />
+  <%= f.text_field :name %>
+</div>
+
+<div class="field">
+  <%= f.label :address, "Address" %><br />
+  <%= f.text_field :address %>
+</div>
+
+<div class="field">
+  <%= f.label :contact, "Contact" %><br />
+  <%= f.text_field :contact %>
+</div>
+
+ <div class="field">
+  <%= f.label :contact_email, "Contact Email" %><br />
+  <%= f.text_field :contact_email %>
+</div>
+
+<div class="field">
+ <%= f.label :category, "Category" %><br />
+ <%= f.text_field :category %>
+</div>
+
+<div class="actions">
+  <%= f.submit "Sign up" %>
+</div>
+<% end %>

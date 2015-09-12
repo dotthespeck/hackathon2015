@@ -1,6 +1,6 @@
-class Flyer < ActiveRecord::Base
+class Organization < ActiveRecord::Base
 
- belongs_to :organization
+ has_many :flyers
 #
 # validates :organization, presence: true
 # validates :image, presence: true
