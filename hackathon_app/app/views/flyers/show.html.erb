@@ -1,16 +1,16 @@
-<div class="content">
+<div class="content" style="text-align:center">
   <h1><%= @flyer.name %></h1>
-  <h2><img src="<%=@flyer.image%>"></h2>
-  <h3><%= @flyer.address %></h3>
-  <h3><%= @flyer.contact %></h3>
-  <h1><%= @flyer.contact_email %></h1>
-  <h2><%= @flyer.category %></h2
-  <h3><%= @flyer.date %></h3>
-  <h5><%= @flyer.time %></h5>
-  <h5><%= @flyer.tags %></h5>
-  <h5><%= @flyer.information %></h5>
+  <img src="<%=@flyer.image%>">
+  <h3>Where: <%= @flyer.address %></h3>
+  <h3>Date: <%= @flyer.date %> Time: <%= @flyer.time %></h3>
+
+  <h3>Contact: <%= @flyer.contact %> Email: <a href=""><%= @flyer.contact_email %></a></h3>
+  <h4>Category: <%= @flyer.category %></h4>
+
+  <h4>Information: <%= @flyer.information %></h4>
+  <h6><%= @flyer.tags %></h6>
 </div>
 
 <div>
-<%= button_to 'Back to the home page', root_path, :method => :get %>
+<%= link_to 'Back to the home page', root_path, :method => :get %>
 </div>

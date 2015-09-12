@@ -1,4 +1,4 @@
-class FlyersController < ActionController::Base
+class FlyersController < ApplicationController
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -20,7 +20,8 @@ class FlyersController < ActionController::Base
     @flyer = Flyer.new(flyer_params)
     #@flyer.organization_id = organization.id
     if @flyer.save
-      redirect_to root_path, :notice => "Your flyer is saved!"
+      redirect_to root_path
+      #:notice => "Your flyer is saved!"
     else
       render :new
     end

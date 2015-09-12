@@ -1,4 +1,4 @@
-class OrganizationsController < ActionController::Base
+class OrganizationsController < ApplicationController
 
   def new
     @organization = Organization.new

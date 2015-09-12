@@ -1,12 +1,12 @@
 <div>
-<%= button_to 'Sign up: Organization', new_organization_path, :method => :get %>
+<%= image_tag("allaboard.png", :alt => "all aboard") %>
 </div>
 
-<div>
+<div style="margin: 0 auto; width: 500px">
 <% @flyers.each do |flyer| %>
 
-<ul>
-  <li><%= flyer.name %></li>
+<ul style="list-style-type:none">
+  <h3 style="text-align:center"><li><%= flyer.name %></li></h3>
   <li><a href="/flyers/<%=flyer.id%>"><img src="<%=flyer.image%>" /></li>
   <li><%= flyer.contact %></li>
   <li><%= flyer.contact_email %></li>
@@ -15,6 +15,6 @@
 <% end %>
 </div>
 
-<div>
-<%= button_to 'Add a flyer', new_flyer_path, :method => :get %>
+<div class="large-2.columns" style="position: absolute; right: 5px">
+<%= link_to 'Add a flyer', new_flyer_path, :class => 'button-round', :method => :get %>
 </div>

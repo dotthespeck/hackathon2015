@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>All Aboard!</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <title>ALLaBoard</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <% if flash[:error] -%>
-    <p class='error'><%=h flash[:error] %></p>
-  <% end -%>
-  <% if flash[:notice] -%>
-    <p class='notice'><%=h flash[:notice] %></p>
-  <% end -%>
+  <nav class="top-bar">
 
-  <!-- <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-      <% end %> -->
+    <div>
+      <ul class="right">
+    <%= link_to 'Sign up: Organization', new_organization_path, :method => :get %>
+  </ul>
+    </div>
 
-<%= yield %>
+  </nav>
 
-<%= javascript_include_tag "application" %>
+    <%- flash.each do |key, value| -%>
+      <div class="flash flash-<%= key %>">
+        <%= value %>
+      </div>
+    <%- end -%>
+
+  <%= yield %>
+
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_tag do %>
+    $(function(){
+      $(document).foundation();
+    });
+  <% end %>
+
+  <%= yield :extra_footer %>
 </body>
 </html>
