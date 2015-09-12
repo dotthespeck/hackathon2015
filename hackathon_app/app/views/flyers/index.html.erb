@@ -1,0 +1,10 @@
+<% @flyers.each do |flyer| %>
+
+<ul>
+  <li><%= flyer.organization_id %></li>
+  <li><a href="/flyers/<%=flyer.id%>"><%= flyer.image %></li>
+  <li><%= flyer.contact %></li>
+  <li><%= flyer.contact_email %></li>
+  <li><%= flyer.category %></li>
+</ul>
+<% end %>
