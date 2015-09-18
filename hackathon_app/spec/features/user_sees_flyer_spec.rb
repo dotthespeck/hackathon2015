@@ -16,10 +16,9 @@ scenario 'User clicks on flyer' do
 
   flyer = FactoryGirl.create(:flyer)
     visit root_path
-    click_on flyer.image
+    find("#flyer").click
 
     expect(page).to have_content flyer.name
-    expect(page).to have_content flyer.image
     expect(page).to have_content flyer.address
     expect(page).to have_content flyer.contact
     expect(page).to have_content flyer.contact_email
@@ -28,5 +27,7 @@ scenario 'User clicks on flyer' do
     expect(page).to have_content flyer.time
     expect(page).to have_content flyer.tags
     expect(page).to have_content flyer.information
+    expect(page).to have_css("img[src$='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRR2fVLdEWusMJJaz-B_iatfdRFxQdpYl5xhVSxkFTTRmMWCQgdntOoG8jW']")
+
     end
 end
